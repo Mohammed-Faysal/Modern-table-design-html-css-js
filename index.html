@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <main class="table" id="customers_table">
+
+        <section class="table__header">
+
+            <h1>Customer's Orders</h1>
+
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF" onclick="convertToPDF()">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="table__body">
+
+            <table id="mainTable">
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow"><i class="fa-solid fa-arrow-up"></i></span></th>
+                        <th> Customer <span class="icon-arrow"><i class="fa-solid fa-arrow-up"></i></span></th>
+                        <th> Location <span class="icon-arrow"><i class="fa-solid fa-arrow-up"></i></span></th>
+                        <th> Order Date <span class="icon-arrow"><i class="fa-solid fa-arrow-up"></i></span></th>
+                        <th> Status <span class="icon-arrow"><i class="fa-solid fa-arrow-up"></i></span></th>
+                        <th> Amount <span class="icon-arrow"><i class="fa-solid fa-arrow-up"></i></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> <img src="images/customer01.jpg" alt="">Vikram sing</td>
+                        <td> Kerala </td>
+                        <td> 05 Jan, 2024 </td>
+                        <td>
+                            <p class="status delivered">Delivered</p>
+                        </td>
+                        <td> <strong> $300.13 </strong></td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td><img src="images/customer02.jpg" alt=""> Karan Nath </td>
+                        <td> Mumbai </td>
+                        <td> 17 Jan, 2024 </td>
+                        <td>
+                            <p class="status cancelled">Cancelled</p>
+                        </td>
+                        <td> <strong>$2040.88</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 3 </td>
+                        <td><img src="images/customer03.jpg" alt=""> Rudra Ray </td>
+                        <td> Rajasthan </td>
+                        <td> 02 Feb, 2024 </td>
+                        <td>
+                            <p class="status shipped">Shipped</p>
+                        </td>
+                        <td> <strong>$156.11</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 4 </td>
+                        <td><img src="images/customer04.jpg" alt=""> Yakub Eftekar </td>
+                        <td> Karachi </td>
+                        <td> 07 Mar, 2024 </td>
+                        <td>
+                            <p class="status delivered">Delivered</p>
+                        </td>
+                        <td> <strong>$290.30</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 5 </td>
+                        <td><img src="images/customer05.jpg" alt=""> Saad Ayan </td>
+                        <td> Islamabad </td>
+                        <td> 28 Mar, 2024 </td>
+                        <td>
+                            <p class="status pending">Pending</p>
+                        </td>
+                        <td> <strong>$299.70</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 6 </td>
+                        <td><img src="images/customer06.jpg" alt=""> Jhon Doe </td>
+                        <td> London </td>
+                        <td> 21 Feb, 2024 </td>
+                        <td>
+                            <p class="status cancelled">Cancelled</p>
+                        </td>
+                        <td> <strong>$312.13</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 7 </td>
+                        <td><img src="images/customer07.jpg" alt=""> Elex Morgan </td>
+                        <td> New York </td>
+                        <td> 29 Jan, 2024 </td>
+                        <td>
+                            <p class="status delivered">Delivered</p>
+                        </td>
+                        <td> <strong>$750.28</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 8 </td>
+                        <td><img src="images/customer01.jpg" alt=""> Sihab Uddin </td>
+                        <td> Islamabad </td>
+                        <td> 30 Feb, 2024 </td>
+                        <td>
+                            <p class="status pending">Pending</p>
+                        </td>
+                        <td> <strong>$620.13</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 9 </td>
+                        <td><img src="images/customer02.jpg" alt=""> Tomlinson Thi </td>
+                        <td> Sydney </td>
+                        <td> 22 Apr, 2024 </td>
+                        <td>
+                            <p class="status delivered">Delivered</p>
+                        </td>
+                        <td> <strong>$242.72</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 10 </td>
+                        <td><img src="images/customer03.jpg" alt=""> Thomson Rok </td>
+                        <td> Florida </td>
+                        <td> 13 Jan, 2024 </td>
+                        <td>
+                            <p class="status cancelled">Cancelled</p>
+                        </td>
+                        <td> <strong>$291.13</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 11 </td>
+                        <td><img src="images/customer04.jpg" alt=""> Alex Smith </td>
+                        <td> Georgia </td>
+                        <td> 22 Mar, 2024 </td>
+                        <td>
+                            <p class="status delivered">Delivered</p>
+                        </td>
+                        <td> <strong>$333.22</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 12 </td>
+                        <td><img src="images/customer05.jpg" alt=""> Rifat Ali </td>
+                        <td> Madrid </td>
+                        <td> 03 Mar, 2024 </td>
+                        <td>
+                            <p class="status pending">Pending</p>
+                        </td>
+                        <td> <strong>$921.32</strong> </td>
+                    </tr>
+                    <tr>
+                        <td> 13 </td>
+                        <td><img src="images/customer06.jpg" alt=""> Jhon Watson </td>
+                        <td> Arizona </td>
+                        <td> 11 Apr, 2024 </td>
+                        <td>
+                            <p class="status shipped">Shipped</p>
+                        </td>
+                        <td> <strong>$521.21</strong> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        
+        <div id="no-match-message">No matching data found.</div>
+        
+    </main>
+
+
+    <!--jQuery CDN-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- script for pdf -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- jQuery CDN -->
+
+    <script src="app.js"></script>
+</body>
+</html>
